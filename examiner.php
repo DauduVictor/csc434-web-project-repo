@@ -29,7 +29,7 @@
         <title>Examiner's Page</title>
     </head>
     <body>
-        <p> Welcome <?php echo $rows['firstname']." ".$rows['lastname'] ?></p>
+        <p> Welcome <?php echo $rows['firstname']." ".$rows['lastname'];?></p>
         <?php
             if ($no_rows == 0) {
                 echo "you have not been assigned any project yet";
@@ -45,7 +45,7 @@
             
             <div>
                 <p><?=$pn;?>
-                <button type='button' name ='grade'  onclick='window.location.href="abass.php"'>grade</button></p>
+                <button type='button' name ='grade'  onclick='window.location.href="we.php"'>grade</button></p>
             </div>
             <?php }?>
         <?php }?>    

@@ -19,13 +19,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>reviewed by</title>
+        <title>Grade Calculator</title>
+        <link rel="stylesheet" href="reviewedby.css">
     </head>
     <body>
-        <table>
+        <h2>Grades</h2>
+    <table>
             <tr>
-                <th>Examiner's first name</th>
-                <th>Examiner's last name</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Astract</th>
                 <th>Literature review</th>
                 <th>Methodology</th>
@@ -44,14 +46,34 @@
             }
             ?>
         </table><br>
-        <form method = 'POST' action = 'reviewedby.php'>
-            <p><label>Abstract <input type ="number" name= "abs" required ='required' min='5' max='20' step ='5'></label></p>
-            <p><label>Literature Review<input type ="number" name= "lit" required = 'required' min='5' max='20' step ='5'></label></p>
-            <p><label>Methodology <input type ="number" name= "met" required = 'required' min='5' max='20' step ='5'></label></p>
-            <p><label>Analysis <input type ="number" name= "anyls" required = 'required' min='5' max='20' step ='5'></label></p>
-            <p><label>Conclusion <input type ="number" name= "cln" required = 'required' min='5' max='20' step ='5'></label></p>
-            <p><input type = "submit" name = "submit" value = "Calculate"></p>
-        </form>
-        <p>Total score:<b> <?php echo"$output" ?> </b></p>
+        <main>
+            <sectio class="glass">
+                <div class="dashboard">
+                    <div class="games">
+                        <div class="status">
+                            <div class="front">
+                                <form method = 'POST' action = 'reviewedby.php'>
+                                        <div class="card1">
+                                            <p><label>Abstract <input type ="number" name= "abs" required ='required' min='5' max='20' step ='5'></label></p>
+                                            <p><label>Literature Review<input type ="number" name= "lit" required = 'required' min='5' max='20' step ='5'></label></p>
+                                            <p><label>Methodology <input type ="number" name= "met" required = 'required' min='5' max='20' step ='5'></label></p>
+                                            <p><label>Analysis <input type ="number" name= "anyls" required = 'required' min='5' max='20' step ='5'></label></p>
+                                            <p><label>Conclusion <input type ="number" name= "cln" required = 'required' min='5' max='20' step ='5'></label></p>
+                                        </div>
+
+                                    <p><input type = "submit" name = "submit" value = "Calculate" class="btn"></p>
+
+                                    <p>Total score:<b> <?php echo"$output" ?> </b></p>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </sectio>
+        </main>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
     </body>
 </html>

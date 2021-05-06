@@ -25,9 +25,10 @@
 <html>
     <head>
         <title>Admin assigns page</title>
+        <link rel="stylesheet" href="adminassign.css">
     </head>
     <body>
-        <p> Welcome Admin!!</p>
+        <h2> Welcome Admin!!</h2>
         <?php
             if ($no_rows == 0) {
                 echo "No projects have been submitted by any student";
@@ -35,22 +36,38 @@
             else{
                 echo "<h2>Here are the submitted projects</h2>";
         ?>
+        <div class="main">
+            <section class="glass">
+                <div class="games">
+                    <div class="status">
+                        <div class="front">
             <?php while ($rows = $result->fetch_assoc()){ 
                 $pn = $rows['project_name'];
+                $sn = $rows['SN'];
             ?>
-            <div>
-                <p><?=$pn;?> assign to: 
-                <select>
+            <form action="adminassign1.php" method="POST">
+                <input type="hidden" name="sn" value="<?= $sn;?>">
+
+                <p><?=$pn;?> assign to: </p>
+                <select name="ln">
                 <?php foreach($lecturer_name as $name){
                 ?>
-                    <option value=<?php $name['id']?>><?= $name['firstname']." ".$name['lastname']; ?></option>
+                    <option value="<?= $name['id']?>"><?= $name['firstname']." ".$name['lastname']; ?></option>
                 <?php }?>
                 </select>
-                <button type='button' name ='assign'  onclick='window.location.href=\"\"'>assign</button></p>
-            </div>
+                <br>
+                <button  name ='assign' type="submit" href="adminassign1.php">assign</button>
+            </form>
             <?php }?>
         <?php }?>
         <br>
-        <button type="button"  name="btnId" onclick="window.location.href ='logout.php'">Log out</button>
+        <button type="button" class="bts" name="btnId" onclick="window.location.href ='logout.php'">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                </main>            
+        </div>
+       
     </body>
 </html>
